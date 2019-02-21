@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+    <script src="../bootstrap.js"></script>
+    <script src="../source/Application.js"></script>
+    <script src="../source/Routing/Router.js"></script>
+    <script src="../source/Routing/Route.js"></script>
+    <script src="../source/Routing/Request.js"></script>
+
+    <script src="../source/ModuleLoader.js"></script>
+
+
+
+    <style>
+        #test {
+            transition: all 1s;
+            padding: 10px;
+            border: solid 1px #AAA;
+            background-color:#CCC;
+            font-family: arial;
+        }
+    </style>
+
+
+</head>
+<body>
+
+</body>
+
+
+<script>
+
+
+    var router=new Khi.Routing.Router();
+
+    var route=router.addRoute('test', function(requestObject) {
+        return true;
+    }, function(requestObject) {
+        console.debug('hello world');
+        console.debug(requestObject);
+    });
+
+    route.execute(router.getRequest());
+    //router.run(true);
+
+</script>
+
+
+
+</html>
